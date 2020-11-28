@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_appa/src/helpers/screen_navigation.dart';
 import 'package:flutter_appa/src/widgets/bottom_navigation_icon.dart';
 import 'package:flutter_appa/src/widgets/categories.dart';
 import 'package:flutter_appa/src/widgets/featured_items.dart';
 import 'package:flutter_appa/src/widgets/small_button.dart';
 import '../helpers/styles.dart';
 import '../widgets/textCustomized.dart';
+import 'bag.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -224,6 +226,9 @@ class _HomeState extends State<Home> {
                 name: "Nearby",
               ),
               BottomNavIcon(
+                onTap: () {
+                  changeScreen(context, Ecobag());
+                },
                 image: "shop.png",
                 name: "Shop",
               ),
