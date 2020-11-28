@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_appa/src/models/category.dart';
 import 'package:flutter_appa/src/widgets/textCustomized.dart';
 
-import '../files.dart';
+import '../helpers/styles.dart';
 List<Category> categoriesList = [
   Category(name: "Rice", image: "rice.png"),
   Category(name: "Fruits", image: "fruits.png"),

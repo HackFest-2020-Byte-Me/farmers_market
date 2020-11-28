@@ -1,6 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_appa/src/widgets/bottom_navigation_icon.dart';
 import 'package:flutter_appa/src/widgets/categories.dart';
-import '../files.dart';
+import 'package:flutter_appa/src/widgets/featured_items.dart';
+import 'package:flutter_appa/src/widgets/small_button.dart';
+import '../helpers/styles.dart';
 import '../widgets/textCustomized.dart';
 
 class Home extends StatefulWidget {
@@ -81,98 +85,154 @@ class _HomeState extends State<Home> {
                 color: grey,
               ),
             ),
+            Featured(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomText(
+                text: "Popular",
+                size: 20,
+                color: grey,
+              ),
+            ),//popular
 
-            Container(
-              height: 240,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 2,
-                  itemBuilder: (_, index) {
-                    return Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Container(
-                        height: 220,
-                        width: 200,
-                        decoration: BoxDecoration(color: white, boxShadow: [
-                          BoxShadow(
-                              color: grey[50],
-                              offset: Offset(15, 5),
-                              blurRadius: 30)
-                        ]),
-                        child: Column(
-                          children: <Widget>[
-                            Image.asset(
-                              "images/bigas.png",
-                              height: 140,
-                              width: 140,
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Stack(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(0),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset("images/egg_popular.jpg")),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+
+                        SmallButton(Icons.favorite),
+
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 50,
+                            decoration: BoxDecoration(
+                              color: white,
+                              borderRadius: BorderRadius.circular(5),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            child: Row(
                               children: <Widget>[
+
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: CustomText(
-                                    text: "Some food",
-                                  ),
+                                  padding: const EdgeInsets.all(2.0),
+                                  child: Icon(Icons.star, color: Colors.red[900],size: 20,),
                                 ),
+                                Text("4.5"),
 
-
-                                Padding(
-                                  padding: EdgeInsets.all(8),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: grey[300],
-                                              offset: Offset(1, 1),
-                                              blurRadius: 4)
-                                        ]),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(4),
-                                      child: Icon(
-                                        Icons.favorite_border,
-                                        color: red,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  ),
-                                )
                               ],
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 8.0),
-                                      child: CustomText(text: "4.7",
-                                        color: grey,
-                                        size: 14,),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Icon(Icons.star, color: red, size: 16, ),
-                                    Icon(Icons.star, color: red, size: 16, ),
-                                    Icon(Icons.star, color: red, size: 16, ),
-                                    Icon(Icons.star, color: red, size: 16, ),
-                                    Icon(Icons.star, color: grey, size: 16, ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 8.0),
-                                  child: CustomText(text: "\₱1600", weight:  FontWeight.bold,),
-                                )
-                              ],
-                            )
-                          ],
+                          ),
                         ),
+
+                      ],
+                    ),
+
+                  ),
+
+                  Positioned.fill(child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      height: 100,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20 ),bottomRight: Radius.circular(20),
+
+                          ),
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                            colors: [
+                              Colors.black.withOpacity(0.8),
+                              Colors.black.withOpacity(0.7),
+                              Colors.black.withOpacity(0.6),
+                              Colors.black.withOpacity(0.4),
+                              Colors.black.withOpacity(0.1),
+                              Colors.black.withOpacity(0.05),
+                              Colors.black.withOpacity(0.025),
+
+                            ],
+                          )
                       ),
-                    );
-                  }),
-            )
+                    ),
+                  )),
+                  Positioned.fill(child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(12, 8, 8, 8),
+                          child: RichText(text: TextSpan(
+                              children: [
+                                TextSpan(text: "Egg Salted \n",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                                TextSpan(text: "by: ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w300)),
+                                TextSpan(text: "Mang Oka's Farm \n",style: TextStyle(fontSize: 16)),
+
+                              ], style: TextStyle(color: white)
+                          ),),
+
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: RichText(text: TextSpan(
+                              children: [
+                                TextSpan(text: "\₱25.00 \n",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold)),
+
+                              ], style: TextStyle(color: white)
+                          ),),
+
+                        ),
+
+
+                      ],
+                    ),
+                  ))
+
+                ],
+              ),
+            ),
           ],
+        ),
+      ),
+
+      bottomNavigationBar: Container(
+        height: 73,
+        color: white,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+
+              BottomNavIcon(
+                image: "home.png",
+                name: "Home",
+              ),
+              BottomNavIcon(
+                image: "point.png",
+                name: "Nearby",
+              ),
+              BottomNavIcon(
+                image: "shop.png",
+                name: "Shop",
+              ),
+              BottomNavIcon(
+                image: "account.png",
+                name: "Account",
+              ),
+            ]
+          ),
         ),
       ),
     );
