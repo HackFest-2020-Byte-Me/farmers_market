@@ -18,13 +18,13 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 95,
+      height: 100,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categoriesList.length,
         itemBuilder: (_, index){
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(6),
             child: Column(
               children: <Widget>[
                 Container(
@@ -32,14 +32,14 @@ class Categories extends StatelessWidget {
                       color: white,
                       boxShadow: [
                         BoxShadow(
-                            color: grey[50],
-                            offset: Offset(4, 6),
+                            color: grey[500],
+                            offset: Offset(2, 2),
                             blurRadius: 20
                         )
                       ],
                     ),
                     child: Padding(padding: EdgeInsets.all(4),
-                      child: Image.asset("images/${categoriesList[index].image}", width: 50,),)
+                      child: Image.asset("images/${categoriesList[index].image}", width: 50, height: 50,),)
                 ),
                 SizedBox(height: 10,),
                 CustomText(text: categoriesList[index].name, size: 14, color: black,)
