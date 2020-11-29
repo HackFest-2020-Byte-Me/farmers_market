@@ -19,7 +19,7 @@ class BottomNavIcon extends StatelessWidget {
           children: <Widget>[
             Image.asset("images/$image", width: 20, height: 20,),
             SizedBox(height: 2,),
-            CustomText(text: "Home",)
+            CustomText(text: name,)
           ],
         ),
       ),

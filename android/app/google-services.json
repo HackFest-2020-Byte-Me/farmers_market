@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "176673697588",
+    "firebase_url": "https://farmbyte-cad0e.firebaseio.com",
+    "project_id": "farmbyte-cad0e",
+    "storage_bucket": "farmbyte-cad0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176673697588:android:aa3e1471e0fac91a96bf61",
+        "android_client_info": {
+          "package_name": "com.ByteMe.FarmByte"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176673697588-l71nkmk2ivoncujb2m0ubond2qj1k413.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQK4N0ayaS3ZpJ7fxPjnANnsOw0QxWxqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176673697588-l71nkmk2ivoncujb2m0ubond2qj1k413.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
